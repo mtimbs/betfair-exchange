@@ -1,0 +1,15 @@
+{
+  "name": "betfair-wrapper",
+  "version": "1.0.0",
+  "description": "Wrapper around Betfair Exchange API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "betfair",
+    "exchange"
+  ],
+  "author": "Michael Timbs",
+  "license": "ISC"
+}
