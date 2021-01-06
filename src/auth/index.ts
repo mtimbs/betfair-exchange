@@ -57,7 +57,8 @@ const AUTH_RESPONSES: Record<LOGIN_ERROR_STATUS, string> = {
   TRADING_MASTER:                           'Trading Master Account',
   TRADING_MASTER_SUSPENDED:                 'Suspended Trading Master Account'
 }
-const CERT = (() => {
+
+const CERTIFICATE_FROM_FILESYSTEM = (() => {
   try {
     fs.readFileSync(BETFAIR_CERTIFICATE_PATH).toString()
   } catch (error) {
@@ -65,7 +66,7 @@ const CERT = (() => {
   }
 })();
 
-const KEY = (() => {
+const KEY_FROM_FILESYSTEM = (() => {
   try {
     fs.readFileSync(BETFAIR_KEY_PATH).toString()
   } catch (error) {
@@ -73,7 +74,8 @@ const KEY = (() => {
   }
 })();
 
-export const authenticate = async () => {
+// If you do not want to store certificates and keys on the filesystem you may pass them explicitly to the authenticate method
+export const authenticate = async ({certificate, key}: {certificate?: string, key?: string} = {}) => {
   const response = await fetch(AUTH_URL, {
     method: 'POST',
     headers: {
@@ -81,8 +83,8 @@ export const authenticate = async () => {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     agent: new https.Agent({
-      cert: CERT,
-      key: KEY,
+      cert: certificate || CERTIFICATE_FROM_FILESYSTEM,
+      key: key || KEY_FROM_FILESYSTEM,
       passphrase: BETFAIR_CERTIFICATE_PASSPHRASE,
       rejectUnauthorized: true,
       keepAlive: false,
