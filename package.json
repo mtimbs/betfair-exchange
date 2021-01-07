@@ -9,7 +9,7 @@
   "main": "./lib/commonjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/main.d.ts",
-  "files": ["lib/**/*"],
+  "files": ["lib/"],
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/jest --ci --verbose",
     "lint": "eslint . --ext .js,.ts",

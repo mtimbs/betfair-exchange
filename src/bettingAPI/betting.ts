@@ -761,6 +761,8 @@ export type ListTimeRangesParams = {
   granularity: TimeGranularity;
 }
 
+export type ListVenueParams = FilterAndLocale
+
 export type PlaceOrdersParams = {
   async?: boolean;
   customerRef?: string;

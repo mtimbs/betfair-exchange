@@ -19,9 +19,9 @@ import {
   ListMarketTypesParams,
   ListRunnerBookParams,
   ListTimeRangesParams,
+  ListVenueParams,
   MarketBook,
   MarketCatalogue,
-  MarketFilter,
   MarketProfitAndLoss,
   MarketTypeResult,
   PlaceExecutionReport,
@@ -34,7 +34,6 @@ import {
 
 export type Operations =
   'cancelOrders'
-  | 'listVenues'
   | 'listClearedOrders'
   | 'listCompetitions'
   | 'listCountries'
@@ -47,13 +46,13 @@ export type Operations =
   | 'listMarketTypes'
   | 'listRunnerBook'
   | 'listTimeRanges'
+  | 'listVenues'
   | 'replaceOrders'
   | 'placeOrders'
 
 export type BettingAPIRequestParams<T extends Operations> =
   T extends 'cancelOrders' ? CancelOrderParams :
   T extends 'listClearedOrders' ? ListClearedOrdersParams :
-  T extends 'listVenues' ? MarketFilter :
   T extends 'listCompetitions' ? ListCompetitionsParams :
   T extends 'listCountries' ? ListCountriesParams :
   T extends 'listCurrentOrders' ? ListCurrentOrdersParams :
@@ -65,13 +64,13 @@ export type BettingAPIRequestParams<T extends Operations> =
   T extends 'listMarketTypes' ? ListMarketTypesParams :
   T extends 'listRunnerBook' ? ListRunnerBookParams :
   T extends 'listTimeRanges' ? ListTimeRangesParams :
+  T extends 'listVenues' ? ListVenueParams :
   T extends 'replaceOrders' ? ReplaceOrdersParams :
   T extends 'placeOrders' ? PlaceOrdersParams :
     never
 
 export type BettingAPIResponse<T extends Operations> =
   T extends 'cancelOrders' ? CancelExecutionReport :
-  T extends 'listVenues' ? VenueResult[] :
   T extends 'listClearedOrders' ? ClearedOrderSummaryReport :
   T extends 'listCompetitions' ? CompetitionResult[] :
   T extends 'listCountries' ? CountryCodeResult[] :
@@ -84,6 +83,7 @@ export type BettingAPIResponse<T extends Operations> =
   T extends 'listMarketTypes' ? MarketTypeResult[] :
   T extends 'listRunnerBook' ? MarketBook[] :
   T extends 'listTimeRanges' ? TimeRangeResult[] :
+  T extends 'listVenues' ? VenueResult[] :
   T extends 'replaceOrders' ? ReplaceExecutionReport :
   T extends 'placeOrders' ? PlaceExecutionReport :
     never

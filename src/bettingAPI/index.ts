@@ -20,9 +20,9 @@ import {
   ListMarketTypesParams,
   ListRunnerBookParams,
   ListTimeRangesParams,
+  ListVenueParams,
   MarketBook,
   MarketCatalogue,
-  MarketFilter,
   MarketProfitAndLoss,
   MarketTypeResult,
   PlaceExecutionReport,
@@ -53,6 +53,9 @@ const bettingApi = async<T extends Operations>(operation: T, params: BettingAPIR
     headers: HEADERS,
     body: JSON.stringify(params),
   });
+
+  if (!response.ok) throw Error(`${response.status}: ${response.statusText}`);
+
   return response.json();
 };
 
@@ -86,7 +89,7 @@ export const listRunnerBook = async (params: ListRunnerBookParams): Promise<Mark
 
 export const listTimeRanges = async (params: ListTimeRangesParams): Promise<TimeRangeResult[]> => bettingApi('listTimeRanges', params);
 
-export const listVenues = async (params: MarketFilter): Promise<VenueResult[]> => bettingApi('listVenues', params);
+export const listVenues = async (params: ListVenueParams): Promise<VenueResult[]> => bettingApi('listVenues', params);
 
 export const replaceOrders = async (params: ReplaceOrdersParams): Promise<ReplaceExecutionReport> => bettingApi('replaceOrders', params);
 
