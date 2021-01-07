@@ -1,21 +1,21 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 import { v4 as uuidv4 } from 'uuid';
-import { authenticate } from '@src/auth'
-import {FetchMock} from "jest-fetch-mock";
+import { authenticate } from '@src/auth';
+import { FetchMock } from 'jest-fetch-mock';
 
-describe('Auth', () => {
-  it('If loginStatus === SUCCESS it returns a session token', async () => {
+describe('auth', () => {
+  it('if loginStatus === SUCCESS it returns a session token', async () => {
     expect.hasAssertions();
-    //Setup
+    // Setup
     const token = uuidv4();
 
     (fetch as unknown as FetchMock).mockResponse(JSON.stringify({
       sessionToken: token,
-      loginStatus: 'SUCCESS'
+      loginStatus: 'SUCCESS',
     }));
 
-    const sessionToken = await authenticate()
+    const sessionToken = await authenticate();
 
-    expect(sessionToken).toStrictEqual(token)
-  })
-})
+    expect(sessionToken).toStrictEqual(token);
+  });
+});

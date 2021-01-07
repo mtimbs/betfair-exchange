@@ -7,6 +7,9 @@
 # Blackhole sun won't you come
 node_modules/
 
+# Generated Code
+/lib
+
 # IDE's etc
 
 .idea
