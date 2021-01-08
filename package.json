@@ -1,6 +1,6 @@
 {
   "name": "betfair-api-ts",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "Simple TypeScript wrapper around Betfair Exchange API that gives type safety",
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
+  "types": "lib/types/index.d.ts",
   "files": [
     "lib/"
   ],

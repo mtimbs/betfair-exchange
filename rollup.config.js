@@ -4,7 +4,6 @@ import pkg from './package.json';
 
 const extensions = ['.js', '.ts'];
 export default [
-// CommonJS (for Node) and ES module (for bundlers) build.
   {
     input: 'src/index.ts',
     output: [
