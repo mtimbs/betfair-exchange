@@ -215,7 +215,7 @@ export type CancelExecutionReport = {
 }
 
 export type CancelInstructionReport = {
-  cancelledDate?: Date;
+  cancelledDate?: string;
   errorCode?: InstructionReportErrorCode;
   instruction?: CancelInstruction;
   sizeCancelled: double;
@@ -233,17 +233,17 @@ export type ClearedOrderSummary = {
   eventTypeId?: string;
   handicap?: double;
   itemDescription?: ItemDescription;
-  lastMatchedDate?: Date;
+  lastMatchedDate?: string;
   marketId?: string;
   orderType?: OrderType;
   persistenceType?: PersistenceType;
-  placedDate?: Date;
+  placedDate?: string;
   priceMatched?: double;
   priceReduced?: boolean;
   priceRequested?: double;
   profit?: double;
   selectionId?: long;
-  settledDate?: Date;
+  settledDate?: string;
   side?: Side;
   sizeCancelled?: double;
   sizeSettled?: double;
@@ -278,10 +278,10 @@ export type CurrentOrderSummary = {
   customerStrategyRef?: string;
   handicap: double;
   marketId: string;
-  matchedDate: Date;
+  matchedDate: string;
   orderType: OrderType;
   persistenceType: PersistenceType;
-  placedDate: Date;
+  placedDate: string;
   priceSize: PriceSize;
   regulatorAuthCode?: string;
   regulatorCode?: string;
@@ -304,7 +304,7 @@ export type Event = {
   countryCode?: string;
   id?: string;
   name?: string;
-  openDate?: Date;
+  openDate?: string;
   timezone?: string;
   venue?: string;
 }
@@ -343,7 +343,7 @@ export type ItemDescription = {
   eventDesc?: string;
   eventTypeDesc?: string;
   marketDesc?: string;
-  marketStartTime?: Date;
+  marketStartTime?: string;
   marketType?: string;
   numberOfWinners?: int;
   runnerDesc?: string;
@@ -381,7 +381,7 @@ export type MarketBook = {
   inplay?: boolean;
   isMarketDataDelayed: boolean;
   keyLineDescription?: KeyLineDescription;
-  lastMatchTime?: Date;
+  lastMatchTime?: string;
   marketId: string;
   numberOfActiveRunners?: int;
   numberOfRunners?: int;
@@ -401,7 +401,7 @@ export type MarketCatalogue = {
   eventType?: EventType;
   marketId: string;
   marketName: string;
-  marketStartTime?: Date;
+  marketStartTime?: string;
   runners?: RunnerCatalog[];
   totalMatched?: double;
 }
@@ -414,7 +414,7 @@ export type MarketDescription = {
   eachWayDivisor?: double;
   lineRangeInfo?: MarketLineRangeInfo;
   marketBaseRate: double;
-  marketTime: Date;
+  marketTime: string;
   marketType: string;
   persistenceEnabled: boolean;
   priceLadderDescription?: PriceLadderDescription;
@@ -422,8 +422,8 @@ export type MarketDescription = {
   regulator: 'GIBRALTAR REGULATOR' | 'MR_ESP' | 'MR_IT';
   rules?: string;
   rulesHasDate?: boolean;
-  settleTime?: Date;
-  suspendTime: Date;
+  settleTime?: string;
+  suspendTime: string;
   turnInPlayEnabled: boolean;
   wallet?: string;
 }
@@ -487,7 +487,7 @@ export type MarketVersion = {
 
 export type Match = {
   betId?: string;
-  matchDate?: Date;
+  matchDate?: string;
   matchId?: string;
   price: double;
   side: Side;
@@ -502,7 +502,7 @@ export type Order = {
   customerStrategyRef?: string;
   orderType: OrderType;
   persistenceType: PersistenceType;
-  placedDate: Date;
+  placedDate: string;
   price: double;
   side: Side;
   size: number;
@@ -539,7 +539,7 @@ export type PlaceInstructionReport = {
   errorCode?: InstructionReportErrorCode
   instruction: PlaceInstruction;
   orderStatus?: OrderStatus;
-  placedDate?: Date;
+  placedDate?: string;
   sizeMatched?: double;
   status: InstructionReportStatus;
 }
@@ -588,7 +588,7 @@ export type Runner = {
   matches?: Match[];
   matchesByStrategy?: Record<string, Match>;
   orders?: Order[];
-  removalDate?: Date;
+  removalDate?: string;
   selectionId: long;
   sp?: StartingPrices;
   status: RunnerStatus;
@@ -625,8 +625,8 @@ export type RunnerProfitAndLoss = {
 }
 
 export type TimeRange = {
-  from: Date;
-  to: Date;
+  from: string;
+  to: string;
 }
 
 export type TimeRangeResult = {
@@ -718,7 +718,7 @@ export type ListMarketBookParams = {
   includeOverallPosition?: boolean;
   locale?: string;
   marketIds: string[];
-  matchedSince?: Date;
+  matchedSince?: string;
   matchProjection?: MatchProjection;
   orderProjection?: OrderProjection;
   partitionMatchedByStrategyRef?: boolean;
@@ -749,7 +749,7 @@ export type ListRunnerBookParams = {
   locale?: string;
   marketId: string;
   matchProjection?: MatchProjection;
-  matchedSince?: Date;
+  matchedSince?: string;
   orderProjection?: OrderProjection;
   partitionMatchedByStrategyRef?: boolean;
   priceProjection?: PriceProjection;
