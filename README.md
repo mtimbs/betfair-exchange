@@ -13,6 +13,21 @@ You will need the following information to authenticate the API
 - [Certificate Key](https://docs.developer.betfair.com/display/1smk3cen4v3lu3yomq5qye0ni/Non-Interactive+%28bot%29+login#NonInteractive(bot)login-CreatingaSelfSignedCertificate)
 - (Optional) [Certificate Key Passphrase](https://docs.developer.betfair.com/display/1smk3cen4v3lu3yomq5qye0ni/Non-Interactive+%28bot%29+login#NonInteractive(bot)login-LinkingtheCertificatetoYourBetfairAccount)
 
+```typescript
+import { authenticate } from 'betfair-api-ts';
 
+const main = async() => {
+  await authenticate({
+    username: '',             //Betfair Username
+    password: '',             // Betfair password
+    appKey: '',               // Betfair Application Key
+    certificate: '',          // Self Signed Certificate
+    certificateKey: '',       // Self Signed Certificate Key
+    certificatePassword: '',  // Optional passphrase for Certificate Key
+  })
+  
+  // You are now free to interact with the API and all requests will be authenticated automatically.
+}
+```
 
 Note: Current version does not support refreshing authentication tokens. This will need to be handled manually.
