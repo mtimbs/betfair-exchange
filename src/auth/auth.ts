@@ -1,4 +1,14 @@
-export type LOGIN_ERROR_STATUS = 'ACCOUNT_ALREADY_LOCKED'
+export interface AuthParams {
+  username: string;
+  password: string;
+  appKey: string;
+  certificate: string;
+  certificateKey: string;
+  certificatePassword?: string;
+}
+
+export type LOGIN_ERROR_STATUS =
+  | 'ACCOUNT_ALREADY_LOCKED'
   | 'ACCOUNT_NOW_LOCKED'
   | 'ACCOUNT_PENDING_PASSWORD_CHANGE'
   | 'ACTIONS_REQUIRED'

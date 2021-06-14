@@ -33,7 +33,7 @@ import {
 } from './betting';
 
 export type Operations =
-  'cancelOrders'
+  | 'cancelOrders'
   | 'listClearedOrders'
   | 'listCompetitions'
   | 'listCountries'

@@ -14,7 +14,13 @@ describe('auth', () => {
       loginStatus: 'SUCCESS',
     }));
 
-    const sessionToken = await authenticate();
+    const sessionToken = await authenticate({
+      username: 'testUser',
+      password: 'password',
+      appKey: 'appKey',
+      certificate: 'test-cert',
+      certificateKey: 'test-cert-key',
+    });
 
     expect(sessionToken).toStrictEqual(token);
   });

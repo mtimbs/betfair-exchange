@@ -34,16 +34,13 @@ import {
 } from './betting';
 import { Operations, BettingAPIRequestParams, BettingAPIResponse } from './bettingApi';
 import { authenticate as _authenticate } from '../auth/index';
-
-const {
-  BETFAIR_APP_KEY = '',
-} = process.env;
+import { AuthParams } from '../auth/auth';
 
 const BASE_URL = 'https://api.betfair.com/exchange/betting/rest/v1.0';
 const HEADERS = {
-  'X-Application': BETFAIR_APP_KEY,
   Accept: 'application/json',
   'Content-type': 'application/json',
+  'X-Application': '',
   'X-Authentication': '',
 };
 
@@ -59,7 +56,8 @@ const bettingApi = async<T extends Operations>(operation: T, params: BettingAPIR
   return response.json();
 };
 
-export const authenticate = async (params: {certificate?: string, key?: string} = {}): Promise<void> => {
+export const authenticate = async (params: AuthParams): Promise<void> => {
+  HEADERS['X-Application'] = params.appKey;
   HEADERS['X-Authentication'] = await _authenticate(params);
 };
 

@@ -5,17 +5,17 @@ https://docs.developer.betfair.com/display/1smk3cen4v3lu3yomq5qye0ni/Betting+Enu
 ///////////////////////////////////////// */
 
 export type BetStatus =
-  'CANCELLED'
+  | 'CANCELLED'
   | 'LAPSED'
   | 'SETTLED'
   | 'VOIDED'
 
 export type BetTargetType =
-  'BACKERS_PROFIT'
+  | 'BACKERS_PROFIT'
   | 'PAYOUT'
 
 export type ExecutionReportErrorCode =
-  'BET_ACTION_ERROR'
+  | 'BET_ACTION_ERROR'
   | 'DUPLICATE_BETIDS'
   | 'DUPLICATE_TRANSACTION'
   | 'ERROR_IN_MATCHER'
@@ -39,20 +39,20 @@ export type ExecutionReportErrorCode =
   | 'TOO_MANY_INSTRUCTIONS'
 
 export type ExecutionReportStatus =
-  'FAILURE'
+  | 'FAILURE'
   | 'PROCESSED_WITH_ERRORS'
   | 'SUCCESS'
   | 'TIMEOUT'
 
 export type GroupBy =
-  'BET'
+  | 'BET'
   | 'EVENT'
   | 'EVENT_TYPE'
   | 'MARKET'
   | 'SIDE'
 
 export type InstructionReportErrorCode =
-  'BET_IN_PROGRESS'
+  | 'BET_IN_PROGRESS'
   | 'BET_LAPSED_PRICE_IMPROVEMENT_TOO_LARGE'
   | 'BET_TAKEN_OR_LAPSED'
   | 'CANCELLED_NOT_PLACED'
@@ -81,12 +81,12 @@ export type InstructionReportErrorCode =
   | 'UNEXPECTED_PERSISTENCE_TYPE'
 
 export type InstructionReportStatus =
-  'FAILURE'
+  | 'FAILURE'
   | 'SUCCESS'
   | 'TIMEOUT'
 
 export type MarketBettingType =
-  'ASIAN_HANDICAP_DOUBLE_LINE'
+  | 'ASIAN_HANDICAP_DOUBLE_LINE'
   | 'ASIAN_HANDICAP_SINGLE_LINE'
   | 'FIXED_ODDS'
   | 'LINE'
@@ -94,7 +94,7 @@ export type MarketBettingType =
   | 'RANGE'
 
 export type MarketProjection =
-  'COMPETITION'
+  | 'COMPETITION'
   | 'EVENT'
   | 'EVENT_TYPE'
   | 'MARKET_DESCRIPTION'
@@ -103,7 +103,7 @@ export type MarketProjection =
   | 'RUNNER_METADATA'
 
 export type MarketSort =
-  'FIRST_TO_START'
+  | 'FIRST_TO_START'
   | 'LAST_TO_START'
   | 'MAXIMUM_AVAILABLE'
   | 'MAXIMUM_TRADED'
@@ -111,18 +111,18 @@ export type MarketSort =
   | 'MINIMUM_TRADED'
 
 export type MarketStatus =
-  'CLOSED'
+  | 'CLOSED'
   | 'INACTIVE'
   | 'OPEN'
   | 'SUSPENDED'
 
 export type MatchProjection =
-  'NO_ROLLUP'
+  | 'NO_ROLLUP'
   | 'ROLLED_UP_BY_AVG_PRICE'
   | 'ROLLED_UP_BY_PRICE'
 
 export type OrderBy =
-  'BY_BET'
+  | 'BY_BET'
   | 'BY_MARKET'
   | 'BY_MATCH_TIME'
   | 'BY_PLACE_TIME'
@@ -130,46 +130,46 @@ export type OrderBy =
   | 'BY_VOID_TIME'
 
 export type OrderProjection =
-  'ALL'
+  | 'ALL'
   | 'EXECUTABLE'
   | 'EXECUTION_COMPLETE'
 
 export type OrderStatus =
-  'EXECUTABLE'
+  | 'EXECUTABLE'
   | 'EXECUTION_COMPLETE'
   | 'EXPIRED'
   | 'PENDING'
 
 export type OrderType =
-  'LIMIT'
+  | 'LIMIT'
   | 'LIMIT_ON_CLOSE'
   | 'MARKET_ON_CLOSE'
 
 export type PersistenceType =
-  'LAPSE'
+  | 'LAPSE'
   | 'MARKET_ON_CLOSE'
   | 'PERSIST'
 
 export type PriceData =
-  'EX_ALL_OFFERS'
+  | 'EX_ALL_OFFERS'
   | 'EX_BEST_OFFERS'
   | 'EX_TRADED'
   | 'SP_AVAILABLE'
   | 'SP_TRADED'
 
 export type PriceLadderType =
-  'CLASSIC'
+  | 'CLASSIC'
   | 'FINEST'
   | 'LINE_RANGE'
 
 export type RollupModel =
-  'MANAGED_LIABILITY'
+  | 'MANAGED_LIABILITY'
   | 'NONE'
   | 'STAKE'
   | 'PAYOUT'
 
 export type RunnerStatus =
-  'ACTIVE'
+  | 'ACTIVE'
   | 'HIDDEN'
   | 'LOSER'
   | 'PLACED'
@@ -178,15 +178,15 @@ export type RunnerStatus =
   | 'WINNER'
 
 export type Side =
-  'BACK'
+  | 'BACK'
   | 'LAY'
 
 export type SortDir =
-  'EARLIEST_TO_LATEST'
+  | 'EARLIEST_TO_LATEST'
   | 'LATEST_TO_EARLIEST'
 
 export type TimeGranularity =
-  'DAYS'
+  | 'DAYS'
   | 'HOURS'
   | 'MINUTES'
 
